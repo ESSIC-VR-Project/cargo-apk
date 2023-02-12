@@ -17,6 +17,8 @@ pub struct AndroidManifest {
     pub version_code: Option<u32>,
     #[serde(rename(serialize = "android:versionName"))]
     pub version_name: Option<String>,
+    #[serde(rename(serialize = "android:installLocation"))]
+    pub install_location: Option<String>,
 
     #[serde(rename(serialize = "uses-sdk"))]
     #[serde(default)]
@@ -49,6 +51,7 @@ impl Default for AndroidManifest {
             uses_permission: Default::default(),
             queries: Default::default(),
             application: Default::default(),
+            install_location: Default::default()
         }
     }
 }
